@@ -31,7 +31,7 @@ namespace Business.Concrete
 
         public void Delete(Car car)
         {
-            throw new NotImplementedException();
+            _carDal.Delete(car);
         }
 
         public List<Car> GetAll()
@@ -39,9 +39,9 @@ namespace Business.Concrete
            return _carDal.GetAll();
         }
 
-        public List<Car> GetById(int i)
+        public Car GetById(int i)
         {
-            throw new NotImplementedException();
+            return _carDal.GetById(c=> c.Id == i);
         }
 
         public List<Car> GetCarsBrandId(int i)
@@ -56,7 +56,13 @@ namespace Business.Concrete
 
         public void Update(Car car)
         {
-            throw new NotImplementedException();
+            _carDal.Update(car);
         }
+
+        public List<CarDetailDto> GetCarDetails()
+        {
+            return _carDal.GetCarDetails();
+        }
+
     }
 }
