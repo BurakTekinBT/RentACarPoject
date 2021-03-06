@@ -1,5 +1,5 @@
 ﻿using Business.Abstract;
-using Core.Results;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -54,5 +54,7 @@ namespace Business.Concrete
         {
             return new DataResult<List<CarDetailDto>>(_carDal.GetCarDetails(), true, "Başarılı Listemleme");
         }
+
+       
     }
 }

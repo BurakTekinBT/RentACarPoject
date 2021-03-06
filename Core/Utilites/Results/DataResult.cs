@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Results
+namespace Core.Utilities.Results
 {
     public class DataResult<T> : Result, IDataResult<T>
     {

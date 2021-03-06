@@ -12,16 +12,20 @@ namespace ConsoleUI
         {
             //CarManager();
 
-            BrandManager colorManager = new BrandManager(new EFBrandDal());
+            UserManager userManager = new UserManager(new EfUserDal());
 
             //colorManager.Delete(new Brand() { brandName ="Decepticon" , Id=3  });
 
-            var item = colorManager.GetAll();
 
-            foreach (var i in item.Data)
-            {
-                Console.WriteLine(i.brandName);
-            }
+            userManager.Add(new User { FirstName = "ilyas", LastName = " Tekin", Email = " ilyas@gmail.com", Password = 12345 });
+
+                foreach (var us in userManager.GetAll().Data)
+                {
+                    Console.WriteLine(us.FirstName);
+                }
+
+                
+
 
         }
 
@@ -36,7 +40,7 @@ namespace ConsoleUI
 
                 foreach (var vehicle in result.Data)
                 {
-                    Console.WriteLine(vehicle.Description + " " + vehicle.BrandName + " " + vehicle.colorName);
+                    Console.WriteLine(vehicle.Description + " " + vehicle.BrandName + " " + vehicle.ColorName);
                 }
             }
             else

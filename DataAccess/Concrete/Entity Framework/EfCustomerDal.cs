@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Results
+namespace DataAccess.Concrete.Entity_Framework
 {
-    public interface IResult
+    public class EfCustomerDal
     {
-        bool  Success { get; }
-
-        string Message {  get; }
     }
 }

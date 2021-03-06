@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Brand : IEntity
+    public class Rental : IEntity
     {
         public int Id { get; set; }
+        public int CarId { get; set; }
+        public int CustomerId { get; set; }
+        public DateTime RentDate { get; set; }
+        public DateTime ReturnDate { get; set; }
 
-        public string BrandName { get; set; }
     }
 }

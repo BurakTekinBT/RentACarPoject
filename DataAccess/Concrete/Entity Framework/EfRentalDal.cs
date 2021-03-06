@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Results
+namespace DataAccess.Concrete.Entity_Framework
 {
-    public interface IDataResult<T> : IResult
+    public class EfRentalDal
     {
-        T Data { get; }
     }
 }
