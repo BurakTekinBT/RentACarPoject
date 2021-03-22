@@ -10,21 +10,22 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //CarManager();
+            CarManager();
 
-            UserManager userManager = new UserManager(new EfUserDal());
+
 
             //colorManager.Delete(new Brand() { brandName ="Decepticon" , Id=3  });
 
+            //UserManager userManager = new UserManager(new EfUserDal());
 
-            userManager.Add(new User { FirstName = "ilyas", LastName = " Tekin", Email = " ilyas@gmail.com", Password = 12345 });
+            //userManager.Add(new User { FirstName = "ilyas", LastName = " Tekin", Email = " ilyas@gmail.com", Password = 12345 });
 
-                foreach (var us in userManager.GetAll().Data)
-                {
-                    Console.WriteLine(us.FirstName);
-                }
+            //    foreach (var us in userManager.GetAll().Data)
+            //    {
+            //        Console.WriteLine(us.FirstName);
+            //    }
 
-                
+
 
 
         }
@@ -48,6 +49,18 @@ namespace ConsoleUI
                 Console.WriteLine(result.Message);
             }
 
+            var result2 = carManager.GetById(4004);
+
+            var vehicle2 = result2.Data;
+
+            if (result2.Success == true)
+            {
+             Console.WriteLine(vehicle2.Id + vehicle2.Description);
+            }
+            else
+            {
+                Console.WriteLine(result2.Message);
+            }
 
         }
     }
