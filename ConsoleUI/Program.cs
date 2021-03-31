@@ -32,35 +32,35 @@ namespace ConsoleUI
 
         private static void CarManager()
         {
-            CarManager carManager = new CarManager(new EFCarDal());
+           // CarManager carManager = new CarManager(new EFCarDal());
 
-            var result = carManager.GetCarDetails();
+            //var result = carManager.GetCarDetails();
 
-            if (result.Success == true)
-            {
+            //if (result.Success == true)
+            //{
 
-                foreach (var vehicle in result.Data)
-                {
-                    Console.WriteLine(vehicle.Description + " " + vehicle.BrandName + " " + vehicle.ColorName);
-                }
-            }
-            else
-            {
-                Console.WriteLine(result.Message);
-            }
+            //    foreach (var vehicle in result.Data)
+            //    {
+            //        Console.WriteLine(vehicle.Description + " " + vehicle.BrandName + " " + vehicle.ColorName);
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine(result.Message);
+            //}
 
-            var result2 = carManager.GetById(4004);
+            //var result2 = carManager.GetById(4004);
 
-            var vehicle2 = result2.Data;
+            //var vehicle2 = result2.Data;
 
-            if (result2.Success == true)
-            {
-             Console.WriteLine(vehicle2.Id + vehicle2.Description);
-            }
-            else
-            {
-                Console.WriteLine(result2.Message);
-            }
+            //if (result2.Success == true)
+            //{
+            // Console.WriteLine(vehicle2.Id + vehicle2.Description);
+            //}
+            //else
+            //{
+            //    Console.WriteLine(result2.Message);
+            //}
 
         }
     }
