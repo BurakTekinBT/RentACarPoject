@@ -19,7 +19,7 @@ namespace Business.Concrete
         public IResult Add(Car car)
         {
             _carDal.Add(car);
-            return new Result(true, "Selam");
+            return new Result(true, "Araç Eklendi");
         }
         public IResult Delete(Car car)
         {

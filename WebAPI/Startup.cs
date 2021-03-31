@@ -32,9 +32,9 @@ namespace WebAPI
         {
 
             services.AddControllers();
-            //Autofac, ninject, structureMap, LightInject, DryInject bunları kullanabiliriz. 
-            services.AddSingleton<ICarService, CarManager>(); //bana arka planda referans oluştur. içerisinde data tutmuyorsak kullanırız
-            services.AddSingleton<ICarDal, EFCarDal>();
+            ////Autofac, ninject, structureMap, LightInject, DryInject bunları kullanabiliriz. 
+            //services.AddSingleton<ICarService, CarManager>(); //bana arka planda referans oluştur. içerisinde data tutmuyorsak kullanırız
+            //services.AddSingleton<ICarDal, EFCarDal>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI", Version = "v1" });
