@@ -1,6 +1,9 @@
 ﻿using Autofac;
+using Autofac.Extras.DynamicProxy;
 using Business.Abstract;
 using Business.Concrete;
+using Castle.DynamicProxy;
+using Core.Utilites.Interceptors;
 using DataAccess.Abstract;
 using DataAccess.Concrete.Entity_Framework;
 using System;
@@ -17,6 +20,15 @@ namespace Business.DependencyResolvers.Autofac
         {//içinde data tutmadığını bildiğimiz için tek bir instance oluşturuyoruz singleinstance ile
             builder.RegisterType<CarManager>().As<ICarService>().SingleInstance(); //eğer biri ICarService isterse ona bir tane car manager instance ver
             builder.RegisterType<EFCarDal>().As<ICarDal>().SingleInstance();
+
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+
+            builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
+                .EnableInterfaceInterceptors(new ProxyGenerationOptions()
+                {
+                    Selector = new AspectInterceptorSelector()
+                }).SingleInstance();
+
         }
 
     }
